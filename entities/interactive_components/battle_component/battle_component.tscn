@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://e5ely0lcyu5s"]
+
+[ext_resource type="PackedScene" uid="uid://df15vsgti3t0h" path="res://entities/interactible_components/!base/interactible_component.tscn" id="1_ll2me"]
+[ext_resource type="Script" uid="uid://hph5almif2bs" path="res://entities/interactible_components/battle_component/battle_component.gd" id="2_nnctq"]
+
+[node name="BattleComponent" unique_id=1678572421 instance=ExtResource("1_ll2me")]
+script = ExtResource("2_nnctq")

@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://rg7xn6832yvp"]
+
+[ext_resource type="Theme" uid="uid://dy4rdeuia0036" path="res://themes/testing_theme.tres" id="1_3bp52"]
+[ext_resource type="Script" uid="uid://uv05d1u5egei" path="res://gui/menues/main_menu/main_menu.gd" id="2_11tlu"]
+[ext_resource type="FontFile" uid="uid://dnjv3d314go2m" path="res://assets/fonts/nebula/NebulaSans-Bold.ttf" id="3_11tlu"]
+[ext_resource type="PackedScene" uid="uid://bbcus51a4dlk" path="res://gui/menues/settings_menu/settings_menu.tscn" id="4_sttngs"]
+[ext_resource type="PackedScene" uid="uid://crjlhlr0q7fsh" path="res://gui/menues/tutorial_menu/tutorial_menu.tscn" id="5_ogml1"]
+[ext_resource type="FontFile" uid="uid://di1py07xaspch" path="res://assets/fonts/nebula/NebulaSans-MediumItalic.ttf" id="5_vfbdk"]
+
+[node name="MainMenu" type="Control" unique_id=1701465892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3bp52")
+script = ExtResource("2_11tlu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=458891919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonPanel" type="Control" parent="Background" unique_id=567890123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonContainer" type="GridContainer" parent="Background/ButtonPanel" unique_id=302317699]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 317.0
+offset_right = 774.0
+offset_bottom = 997.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 40
+
+[node name="LoadGamebutton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=1728302129]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+disabled = true
+text = "Load Game"
+
+[node name="NewGameButton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=1133884734]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+text = "New Game
+"
+
+[node name="SettingsButton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=1335382606]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+text = "Settings"
+
+[node name="TutorialButton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=1924242905]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+text = "Tutorial"
+
+[node name="CreditsButton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=1044043081]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="Background/ButtonPanel/ButtonContainer" unique_id=184151742]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+text = "Quit"
+
+[node name="Title" type="Label" parent="Background/ButtonPanel" unique_id=2146645608]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -331.0
+offset_top = 122.0
+offset_right = 432.0
+offset_bottom = 267.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_11tlu")
+theme_override_font_sizes/font_size = 120
+text = "Untitled RPG"
+horizontal_alignment = 1
+
+[node name="ExtraLabel" type="Label" parent="Background/ButtonPanel/Title" unique_id=1269950279]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = -93.999985
+offset_right = 1345.0
+offset_bottom = 3.0
+rotation = 0.33766437
+text = "R&D build"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Background/ButtonPanel/Title/ExtraLabel" unique_id=942508372]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0035442896
+color = Color(0.1015625, 0.0792683, 0.063166924, 1)
+metadata/_edit_lock_ = true
+
+[node name="VersionLabel" type="Label" parent="Background/ButtonPanel" unique_id=413507684]
+layout_mode = 0
+offset_left = 1634.0
+offset_top = 1004.0
+offset_right = 1886.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 30
+text = "Version 11.22.33"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsMenu" parent="Background" unique_id=393140662 instance=ExtResource("4_sttngs")]
+layout_mode = 1
+
+[node name="TutorialMenu" parent="Background" unique_id=1516689789 instance=ExtResource("5_ogml1")]
+layout_mode = 1
+
+[node name="Credits" type="Control" parent="Background" unique_id=571427988]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/Credits" unique_id=1370829775]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Credits/MarginContainer" unique_id=1722259324]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Credits/MarginContainer/VBoxContainer" unique_id=1903071523]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Credits/MarginContainer/VBoxContainer" unique_id=458432933]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 2
+theme_override_fonts/italics_font = ExtResource("5_vfbdk")
+bbcode_enabled = true
+text = "Programming & Art by Bernhard Werner
+
+Music by Matthew Pablo via OpenGameArt.org
+[ul]
+Menu Theme: [i]Stepping Pebbles[/i]
+Overworld Theme: [i]Pleasant Creek[/i]
+Battle Theme: [i]The Last Encounter[/i]
+[/ul]
+
+Particle effects & icons by Kenney
+
+Font is [i]Nebula Sans[/i] by Nebula Entertainment
+
+Made with [i]Godot[/i], [i]Blender[/i] and [i]Aseprite[/i]."
+
+[node name="CreditsBackButton" type="Button" parent="Background/Credits/MarginContainer/VBoxContainer" unique_id=2028429260]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/LoadGamebutton" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/NewGameButton" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/TutorialButton" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/CreditsButton" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Background/ButtonPanel/ButtonContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Background/Credits/MarginContainer/VBoxContainer/CreditsBackButton" to="." method="_on_credits_back_button_pressed"]

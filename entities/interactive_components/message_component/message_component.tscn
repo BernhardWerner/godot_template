@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://7de6olcamm0q"]
+
+[ext_resource type="PackedScene" uid="uid://df15vsgti3t0h" path="res://entities/interactive_components/!base/interactible_component.tscn" id="1_3l83y"]
+[ext_resource type="Script" uid="uid://bl2qh2k3iufav" path="res://entities/interactive_components/message_component/message_component.gd" id="2_gcdct"]
+[ext_resource type="Theme" uid="uid://dy4rdeuia0036" path="res://themes/testing_theme.tres" id="3_rduhm"]
+
+[node name="MessageComponent" unique_id=1860516271 instance=ExtResource("1_3l83y")]
+script = ExtResource("2_gcdct")
+message = ""
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1" unique_id=1693021190]
+
+[node name="SpeechBubble" type="ColorRect" parent="CanvasLayer" index="0" unique_id=1596227746]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -659.1
+offset_top = -201.0
+offset_right = 659.1
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+color = Color(0.72, 0.62424, 0.5832, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/SpeechBubble" index="0" unique_id=1032257964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.19995
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_rduhm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "This is just a placeholder text."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0

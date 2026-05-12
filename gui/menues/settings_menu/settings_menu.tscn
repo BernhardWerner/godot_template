@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://bbcus51a4dlk"]
+
+[ext_resource type="Theme" uid="uid://dy4rdeuia0036" path="res://themes/testing_theme.tres" id="1_pq685"]
+[ext_resource type="Script" uid="uid://rybs5gam854o" path="res://gui/menues/settings_menu/settings_menu.gd" id="1_wgv8x"]
+[ext_resource type="Texture2D" uid="uid://c8s1b8bria85c" path="res://placeholder_assets/controller_controls.png" id="3_oxxxj"]
+[ext_resource type="FontFile" uid="uid://dnjv3d314go2m" path="res://assets/fonts/nebula/NebulaSans-Bold.ttf" id="3_pw0n7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq685"]
+bg_color = Color(1, 0.22652304, 0.5255828, 1)
+
+[node name="SettingsMenu" type="Control" unique_id=1292515227]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pq685")
+script = ExtResource("1_wgv8x")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=476050092]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=305460999]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=97820543]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+current_tab = 0
+
+[node name="Sound" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=65513644]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/TabContainer/Sound" unique_id=1532818498]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -22.0
+offset_right = 0.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=803149553]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 2
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=1862162551]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pq685")
+max_value = 1.0
+step = 0.2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=2129074328]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 2
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=1729025720]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pq685")
+max_value = 1.0
+step = 0.2
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=370007519]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 2
+
+[node name="SFXslider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer" unique_id=1104900854]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pq685")
+max_value = 1.0
+step = 0.2
+
+[node name="Gameplay" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=175844415]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/TabContainer/Gameplay" unique_id=2025466494]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -22.0
+offset_right = 500.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="RumbleLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer" unique_id=1172639854]
+layout_mode = 2
+text = "Controler Rumble"
+horizontal_alignment = 2
+
+[node name="RumbleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer" unique_id=380983776]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pq685")
+max_value = 1.0
+step = 0.2
+
+[node name="TextSpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer" unique_id=222074126]
+layout_mode = 2
+text = "Text Speed"
+horizontal_alignment = 2
+
+[node name="TextSpeedSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer" unique_id=1802925430]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pq685")
+min_value = 0.2
+max_value = 1.0
+step = 0.2
+value = 0.2
+
+[node name="Controls" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=432655794]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/TabContainer/Controls" unique_id=1983391201]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer" unique_id=1056118506]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pw0n7")
+text = "Gamepad"
+
+[node name="RightLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer" unique_id=1913718384]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pw0n7")
+text = "Keyboard"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer" unique_id=864436108]
+custom_minimum_size = Vector2(900, 600)
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("3_oxxxj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label0" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer/TextureRect" unique_id=2017765448]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 182.0
+offset_right = 167.0
+offset_bottom = 226.0
+text = "move"
+
+[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer/TextureRect" unique_id=1178371099]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 47.0
+offset_right = 532.0
+offset_bottom = 91.0
+text = "flip pages"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer/TextureRect" unique_id=951207126]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 111.0
+offset_right = 841.0
+offset_bottom = 155.0
+text = "pause menu"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer/TextureRect" unique_id=326863161]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 189.0
+offset_right = 815.0
+offset_bottom = 233.0
+text = "confirm"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer/TextureRect" unique_id=259425827]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 289.0
+offset_right = 836.0
+offset_bottom = 333.0
+text = "cancel"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TabContainer/Controls/GridContainer" unique_id=39340875]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Move with [img]res://placeholder_assets/kenney_input/Keyboard & Mouse/Vector/keyboard_arrows.svg[/img]
+
+Interact/confirm with [img]res://placeholder_assets/kenney_input/Keyboard & Mouse/Vector/keyboard_space.svg[/img]
+
+Open pause menu with [img]res://placeholder_assets/kenney_input/Keyboard & Mouse/Vector/keyboard_escape.svg[/img]"
+
+[node name="Assist" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1832761463]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=108209096]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Sound/GridContainer/SFXslider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer/RumbleSlider" to="." method="_on_rumble_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Gameplay/GridContainer/TextSpeedSlider" to="." method="_on_text_speed_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

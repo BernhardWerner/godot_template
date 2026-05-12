@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://brsaswogmkvxf"]
+
+[ext_resource type="PackedScene" uid="uid://df15vsgti3t0h" path="res://entities/interactible_components/!base/interactible_component.tscn" id="1_a1tg5"]
+[ext_resource type="Script" uid="uid://bnc1yronmgmig" path="res://entities/interactible_components/puppeteer_component/puppeteer_component.gd" id="2_5aono"]
+
+[node name="PuppeteerComponent" instance=ExtResource("1_a1tg5")]
+script = ExtResource("2_5aono")
+path_to_animation_player = NodePath("")
+animation_name = ""

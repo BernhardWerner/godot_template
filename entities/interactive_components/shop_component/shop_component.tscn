@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blnlot7t46fs1"]
+
+[ext_resource type="PackedScene" uid="uid://df15vsgti3t0h" path="res://entities/interactive_components/!base/interactible_component.tscn" id="1_ttdky"]
+[ext_resource type="Script" uid="uid://x244gv84cpc3" path="res://entities/interactive_components/shop_component/shop_component.gd" id="2_ttdky"]
+
+[node name="ShopComponent" unique_id=1678572421 instance=ExtResource("1_ttdky")]
+script = ExtResource("2_ttdky")

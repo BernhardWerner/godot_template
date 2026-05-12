@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://m8oyfsxhewkq"]
+
+[ext_resource type="Script" uid="uid://ccagj5mdyhyng" path="res://entities/player/player.gd" id="1_abrql"]
+[ext_resource type="Texture2D" uid="uid://d3o8j54r1vvfp" path="res://placeholder_assets/char_B.png" id="2_abrql"]
+[ext_resource type="Texture2D" uid="uid://biyymeqcwdjnu" path="res://placeholder_assets/char_A.png" id="2_bls4j"]
+[ext_resource type="Texture2D" uid="uid://xhtjivpp778y" path="res://placeholder_assets/char_D.png" id="4_8fjmc"]
+[ext_resource type="Texture2D" uid="uid://dn3xat1nj8coq" path="res://placeholder_assets/char_C.png" id="4_fkugw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sfv1e"]
+radius = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fkugw"]
+height = 0.89611816
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fkugw"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 14.45
+dof_blur_near_enabled = true
+dof_blur_near_distance = 5.94
+dof_blur_amount = 0.07
+
+[node name="Player" type="CharacterBody3D" unique_id=653597987 node_paths=PackedStringArray("lantern")]
+collision_layer = 2
+script = ExtResource("1_abrql")
+lantern = NodePath("Sprite3D/Lantern")
+
+[node name="Followers" type="Node3D" parent="." unique_id=1310073644]
+
+[node name="Sprite0" type="Sprite3D" parent="Followers" unique_id=20467168]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0011614002, 0.399107, -0.0449094)
+gi_mode = 2
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_abrql")
+
+[node name="Sprite1" type="Sprite3D" parent="Followers" unique_id=281829301]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0011614002, 0.399107, -0.0449094)
+gi_mode = 2
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_fkugw")
+
+[node name="Sprite2" type="Sprite3D" parent="Followers" unique_id=1123556462]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0011614002, 0.399107, -0.0449094)
+visible = false
+gi_mode = 2
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_8fjmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=997774607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_sfv1e")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1845230814]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0011614002, 0.399107, -0.0449094)
+gi_mode = 2
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_bls4j")
+
+[node name="Lantern" type="OmniLight3D" parent="Sprite3D" unique_id=1681383873]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.1664978)
+visible = false
+light_color = Color(1, 0.7545615, 0.42140013, 1)
+light_energy = 1.5
+light_size = 0.5
+shadow_enabled = true
+shadow_blur = 0.2
+omni_range = 2.0
+omni_attenuation = 0.118
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=200000001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+collision_layer = 2
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=200000002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04156494, 0)
+shape = SubResource("CylinderShape3D_fkugw")
+debug_color = Color(0.8671875, 0.8671875, 0.8671875, 0.41960785)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=185616856]
+transform = Transform3D(1, 0, 0, 0, 0.95630395, 0.29237142, 0, -0.29237142, 0.95630395, 0, 0, 0)
+collision_mask = 0
+spring_length = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1276985259]
+attributes = SubResource("CameraAttributesPractical_fkugw")
+current = true
+fov = 35.0
+size = 3.0

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dy4rdeuia0036"]
+
+[ext_resource type="FontFile" uid="uid://cgy8sfppoihag" path="res://assets/fonts/nebula/NebulaSans-Medium.ttf" id="1_sg0hl"]
+
+[resource]
+default_font = ExtResource("1_sg0hl")
+default_font_size = 36

@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cih7lb0myrmfu"]
+
+[ext_resource type="Script" uid="uid://bcvuc3j5v4uyr" path="res://gui/menues/splash_screen/splash_screen.gd" id="1_eud3u"]
+[ext_resource type="Texture2D" uid="uid://r2neyiwdco3o" path="res://placeholder_assets/base_blue.jpg" id="1_nqcdi"]
+[ext_resource type="AudioStream" uid="uid://hts4dqxvqpwg" path="res://placeholder_assets/Mathew_pablo_stepping_pebbles.mp3" id="2_g5tsx"]
+
+[sub_resource type="Animation" id="Animation_tu7re"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0p5mt"]
+resource_name = "boot"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tu7re"]
+_data = {
+&"RESET": SubResource("Animation_tu7re"),
+&"boot": SubResource("Animation_0p5mt")
+}
+
+[node name="SplashScreen" type="Control" unique_id=634248655]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eud3u")
+bgm = ExtResource("2_g5tsx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=651087655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1597373312]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_nqcdi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1676225810]
+libraries/ = SubResource("AnimationLibrary_tu7re")
+autoplay = &"boot"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf7ji5b0fj3yv"]
+
+[ext_resource type="PackedScene" uid="uid://df15vsgti3t0h" path="res://entities/interactible_components/!base/interactible_component.tscn" id="1_bnwpe"]
+[ext_resource type="Script" uid="uid://dftbxr8s4dnrf" path="res://entities/interactible_components/item_collect_component/item_collect_component.gd" id="2_n1m7e"]
+
+[node name="ItemCollectComponent" instance=ExtResource("1_bnwpe")]
+script = ExtResource("2_n1m7e")
+item = 0
+quantity = 1
+trigger = 2
+when_finished = 3
